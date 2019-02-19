@@ -4,7 +4,7 @@ import requests
 
 
 app = Flask(__name__)
-BOOKS = ['1984', 'foo', 'bar', "ahoj a"]
+BOOKS = ['1984', 'foo', 'bar', "K8S Openshift workshop"]
 
 @app.route("/")
 def hello():
@@ -15,10 +15,10 @@ def hello():
             if review.status_code == 200:
                 response += f" {book}: {review.text} <BR>"
             else:
-                print(f'Cannot get review for {name}, result {review.status_code}')
+                print(f'PSX Cannot get review for {name}, result {review.status_code}')
                 response += f" {book} <BR>"
         except:
-            print(f'Cannot contact review service')
+            print(f'PSX Cannot contact review service')
             response += f" {book} <BR>"
     return response
 
